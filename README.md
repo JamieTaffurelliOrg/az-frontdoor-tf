@@ -1,4 +1,4 @@
-# az-frontdoor-tf temp
+# az-frontdoor-tf
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
