@@ -390,6 +390,7 @@ resource "azurerm_cdn_frontdoor_security_policy" "security_policy" {
 
       association {
         patterns_to_match = var.front_door_security_policy["patterns_to_match"]
+
         dynamic "domain" {
           for_each = { for k in var.front_door_security_policy["custom_domain_references"] : k => k }
 
