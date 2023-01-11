@@ -288,7 +288,7 @@ variable "front_door_routes" {
       forwarding_protocol           = optional(string)
       https_redirect_enabled        = optional(bool, true)
       patterns_to_match             = list(string)
-      supported_protocols           = string
+      supported_protocols           = optional(list(string), ["Http", "Https"])
       custom_domain_references      = optional(list(string))
       link_to_default_domain        = bool
       query_string_caching_behavior = optional(string)
