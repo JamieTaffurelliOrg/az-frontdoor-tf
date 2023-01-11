@@ -39,7 +39,7 @@ variable "front_door_custom_domains" {
   type = list(object(
     {
       name        = string
-      dns_zone_id = optional(list(string))
+      dns_zone_id = optional(string)
       host_name   = string
     }
   ))
