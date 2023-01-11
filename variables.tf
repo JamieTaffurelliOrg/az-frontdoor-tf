@@ -304,7 +304,7 @@ variable "front_door_routes" {
 variable "front_door_security_policy" {
   type = object({
     name                     = string
-    patterns_to_match        = optional(string, "/*")
+    patterns_to_match        = optional(list(string), ["/*"])
     custom_domain_references = list(string)
   })
   description = "Front door security policy"
