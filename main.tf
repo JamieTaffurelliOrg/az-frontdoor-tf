@@ -361,7 +361,7 @@ resource "azurerm_cdn_frontdoor_route" "route" {
   for_each                        = { for k in var.front_door_routes : k.name => k if k != null }
   name                            = each.key
   cdn_frontdoor_endpoint_id       = azurerm_cdn_frontdoor_endpoint.endpoint[(each.value["endpoint_reference"])].id
-  cdn_frontdoor_origin_group_id   = azurerm_cdn_frontdoor_endpoint.endpoint[(each.value["origin_group_reference"])].id
+  cdn_frontdoor_origin_group_id   = azurerm_cdn_frontdoor_origin_group.origin_group[(each.value["origin_group_reference"])].id
   cdn_frontdoor_origin_ids        = [for k in setintersection(local.deployed_origin_names, each.value["origin_references"]) : azurerm_cdn_frontdoor_origin.origin[(k)].id]
   cdn_frontdoor_rule_set_ids      = [for k in setintersection(local.deployed_rule_set_names, each.value["rule_set_references"]) : azurerm_cdn_frontdoor_rule_set.rule_set[(k)].id]
   enabled                         = each.value["enabled"]
