@@ -104,7 +104,7 @@ variable "front_door_rules" {
     {
       name               = string
       rule_set_reference = string
-      order              = optional(number)
+      order              = number
       behavior_on_match  = string
       url_rewrite_actions = optional(list(object({
         name                    = string
