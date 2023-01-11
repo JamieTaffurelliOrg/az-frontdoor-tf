@@ -283,7 +283,7 @@ variable "front_door_routes" {
       endpoint_reference            = string
       origin_group_reference        = string
       origin_references             = optional(list(string))
-      rule_set_references           = optional(list(string))
+      rule_set_references           = optional(list(string), [])
       enabled                       = optional(bool, true)
       forwarding_protocol           = optional(string)
       https_redirect_enabled        = optional(bool, true)
