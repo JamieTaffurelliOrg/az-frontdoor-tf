@@ -83,7 +83,7 @@ variable "front_door_origins" {
       https_port                     = optional(number, 443)
       private_link = optional(map(object({
         request_message        = optional(string, "Access request for CDN FrontDoor Private Link Origin")
-        target_type            = string
+        target_type            = optional(string)
         location               = string
         private_link_target_id = string
       })), {})
