@@ -349,9 +349,9 @@ resource "azurerm_cdn_frontdoor_rule" "rule" {
       for_each = { for k in each.value["ssl_protocol_conditions"] : k.name => k if k != null }
 
       content {
-        operator         = is_device_condition.value["operator"]
-        negate_condition = is_device_condition.value["negate_condition"]
-        match_values     = is_device_condition.value["match_values"]
+        operator         = ssl_protocol_condition.value["operator"]
+        negate_condition = ssl_protocol_condition.value["negate_condition"]
+        match_values     = ssl_protocol_condition.value["match_values"]
       }
     }
   }
